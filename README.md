@@ -1,11 +1,17 @@
 # 📝 Todo App
 
-Aplicación web para gestionar tareas, desarrollada con JavaScript puro.
+Aplicación web para gestión de tareas desarrollada con JavaScript puro.
 
-## 🚀 Funcionalidades
-- Agregar tareas
+## 🚀 Demo
+https://jbfrankmorrison.github.io/todo-app/
+
+## ✨ Funcionalidades
+- Crear tareas
+- Editar tareas
 - Eliminar tareas
 - Marcar como completadas
+- Filtros (todas / pendientes / completadas)
+- Contador de tareas pendientes
 - Persistencia con localStorage
 
 ## 🛠 Tecnologías
@@ -13,9 +19,10 @@ Aplicación web para gestionar tareas, desarrollada con JavaScript puro.
 - CSS
 - JavaScript
 
-## 📸 Capturas
-<img width="473" height="555" alt="image" src="https://github.com/user-attachments/assets/f05060b8-587d-4847-a613-d364f02d65c1" />
-
-## 📦 Cómo usar
+## 📦 Instalación
 1. Clona el repositorio
 2. Abre index.html en tu navegador
+
+## 📸 Captura
+<img width="473" height="555" alt="image" src="https://github.com/user-attachments/assets/599f93af-9652-42cc-800f-1de2a9f190a3" />
+
