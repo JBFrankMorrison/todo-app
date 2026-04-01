@@ -14,7 +14,7 @@ Aplicación web para gestionar tareas, desarrollada con JavaScript puro.
 - JavaScript
 
 ## 📸 Capturas
-<img width="995" height="458" alt="image" src="https://github.com/user-attachments/assets/bd4e8593-ef69-476c-b49e-94b8165f9e38" />
+<img width="473" height="555" alt="image" src="https://github.com/user-attachments/assets/f05060b8-587d-4847-a613-d364f02d65c1" />
 
 ## 📦 Cómo usar
 1. Clona el repositorio
