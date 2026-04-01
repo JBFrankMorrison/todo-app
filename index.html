@@ -16,10 +16,12 @@
     </div>
 
     <div class="filtros">
-      <button onclick="filtrar('todas')">Todas</button>
-      <button onclick="filtrar('pendientes')">Pendientes</button>
-      <button onclick="filtrar('completadas')">Completadas</button>
+        <button class="filtro-btn" onclick="filtrar('todas')">Todas</button>
+        <button class="filtro-btn" onclick="filtrar('pendientes')">Pendientes</button>
+        <button class="filtro-btn" onclick="filtrar('completadas')">Completadas</button>
     </div>
+
+    <p id="contador"></p>
 
     <ul id="lista"></ul>
   </div>

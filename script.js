@@ -93,6 +93,9 @@ function renderizarTareas() {
     li.appendChild(botonEliminar);
 
     lista.appendChild(li);
+
+    actualizarContador();
+    actualizarFiltroActivo();
   });
 }
 
@@ -124,3 +127,21 @@ document.getElementById("tareaInput").addEventListener("keypress", (e) => {
 // INICIALIZACIÓN
 // ======================
 renderizarTareas();
+
+function actualizarContador() {
+  const contador = document.getElementById("contador");
+
+  const pendientes = tareas.filter(t => !t.completada).length;
+
+  contador.textContent = `${pendientes} tarea(s) pendientes`;
+}
+
+function actualizarFiltroActivo() {
+  const botones = document.querySelectorAll(".filtro-btn");
+
+  botones.forEach(btn => btn.classList.remove("activo"));
+
+  if (filtroActual === "todas") botones[0].classList.add("activo");
+  if (filtroActual === "pendientes") botones[1].classList.add("activo");
+  if (filtroActual === "completadas") botones[2].classList.add("activo");
+}

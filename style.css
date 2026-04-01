@@ -58,3 +58,7 @@ li {
   gap: 10px;
 }
 
+.activo {
+  background: #28a745;
+}
+
