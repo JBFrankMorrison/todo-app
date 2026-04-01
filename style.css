@@ -50,3 +50,11 @@ li {
   text-decoration: line-through;
   color: gray;
 }
+
+.filtros {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+

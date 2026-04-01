@@ -1,3 +1,10 @@
+let filtroActual = "todas";
+
+function filtrar(tipo) {
+  filtroActual = tipo;
+  renderizarTareas();
+}
+
 let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
 function guardarTareas() {
@@ -8,35 +15,48 @@ function renderizarTareas() {
   const lista = document.getElementById("lista");
   lista.innerHTML = "";
 
-  tareas.forEach((tarea, index) => {
-    const li = document.createElement("li");
+  let tareasFiltradas = tareas;
 
-    const span = document.createElement("span");
-    span.textContent = tarea.texto;
-
-    if (tarea.completada) {
-      span.classList.add("completada");
+    if (filtroActual === "pendientes") {
+    tareasFiltradas = tareas.filter(t => !t.completada);
     }
 
-    span.onclick = () => {
-      tareas[index].completada = !tareas[index].completada;
-      guardarTareas();
-      renderizarTareas();
-    };
+    if (filtroActual === "completadas") {
+    tareasFiltradas = tareas.filter(t => t.completada);
+    }
 
-    const botonEliminar = document.createElement("button");
-    botonEliminar.textContent = "Eliminar";
+  tareasFiltradas.forEach((tarea) => {
+  const indexReal = tareas.indexOf(tarea);
 
-    botonEliminar.onclick = () => {
-      tareas.splice(index, 1);
-      guardarTareas();
-      renderizarTareas();
-    };
+  const li = document.createElement("li");
 
-    li.appendChild(span);
-    li.appendChild(botonEliminar);
-    lista.appendChild(li);
-  });
+  const span = document.createElement("span");
+  span.textContent = tarea.texto;
+
+  if (tarea.completada) {
+    span.classList.add("completada");
+  }
+
+  span.onclick = () => {
+    tareas[indexReal].completada = !tareas[indexReal].completada;
+    guardarTareas();
+    renderizarTareas();
+  };
+
+  const botonEliminar = document.createElement("button");
+  botonEliminar.textContent = "Eliminar";
+
+  botonEliminar.onclick = () => {
+    tareas.splice(indexReal, 1);
+    guardarTareas();
+    renderizarTareas();
+  };
+
+  li.appendChild(span);
+  li.appendChild(botonEliminar);
+  lista.appendChild(li);
+});
+
 }
 
 function agregarTarea() {
